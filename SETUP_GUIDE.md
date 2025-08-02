@@ -7,11 +7,21 @@
 - **Python 3.8+** 
 - **CUDA available** for GPU acceleration
 
-### 2. API Keys Required
-Create a `.env` file in the same directory as the notebook:
+### 2. API Keys Required (RunPod Secrets)
+Set up API keys as RunPod secrets for secure access:
 
+**Method 1: RunPod Secrets (Recommended)**
+1. Go to RunPod Console → Secrets
+2. Create two secrets:
+   - Secret Name: `HF_TOKEN` → Value: your HuggingFace token
+   - Secret Name: `OPENAI_API_KEY` → Value: your OpenAI API key
+3. In environment variables section of your pod, add:
+   - `{{ RUNPOD_SECRET_HF_TOKEN }}`
+   - `{{ RUNPOD_SECRET_OPENAI_API_KEY }}`
+
+**Method 2: .env file (Alternative)**
+Create a `.env` file in the same directory as the notebook:
 ```bash
-# .env file contents
 HF_TOKEN=hf_your_huggingface_token_here
 OPENAI_API_KEY=sk-your_openai_api_key_here
 ```
