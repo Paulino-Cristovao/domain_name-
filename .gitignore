@@ -150,9 +150,9 @@ secrets.json
 *.pem
 
 # Dataset files
-data/
-datasets/
-*.csv
+#data/
+#datasets/
+#*.csv
 *.json
 *.parquet
 *.feather
